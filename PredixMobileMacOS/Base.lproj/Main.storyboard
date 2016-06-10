@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10117"/>
+        <plugIn identifier="com.apple.WebKitIBPlugin" version="10117"/>
+        <capability name="stacking Non-gravity area distributions on NSStackView" minToolsVersion="7.0" minSystemVersion="10.11"/>
+    </dependencies>
+    <scenes>
+        <!--Application-->
+        <scene sceneID="JPo-4y-FX3">
+            <objects>
+                <application id="hnw-xV-0zn" sceneMemberID="viewController">
+                    <menu key="mainMenu" title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
+                        <items>
+                            <menuItem title="Predix Mobile" id="1Xt-HY-uBw">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="Predix Mobile" systemMenu="apple" id="uQy-DD-JDr">
+                                    <items>
+                                        <menuItem title="About Predix Mobile" id="5kV-Vb-QxS">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="orderFrontStandardAboutPanel:" target="Ady-hI-5gd" id="Exp-CZ-Vem"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="VOq-y0-SEH"/>
+                                        <menuItem title="Preferences…" keyEquivalent="," id="BOF-NM-1cW">
+                                            <connections>
+                                                <segue destination="HAs-Eg-bBJ" kind="show" identifier="showPreferences" id="Swj-0B-odx"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="wFC-TO-SCJ"/>
+                                        <menuItem title="Services" id="NMo-om-nkz">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <menu key="submenu" title="Services" systemMenu="services" id="hz9-B4-Xy5"/>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="4je-JR-u6R"/>
+                                        <menuItem title="Hide Predix Mobile" keyEquivalent="h" id="Olw-nP-bQN">
+                                            <connections>
+                                                <action selector="hide:" target="Ady-hI-5gd" id="PnN-Uc-m68"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Hide Others" keyEquivalent="h" id="Vdr-fp-XzO">
+                                            <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
+                                            <connections>
+                                                <action selector="hideOtherApplications:" target="Ady-hI-5gd" id="VT4-aY-XCT"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Show All" id="Kd2-mp-pUS">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="unhideAllApplications:" target="Ady-hI-5gd" id="Dhg-Le-xox"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="kCx-OE-vgT"/>
+                                        <menuItem title="Quit Predix Mobile" keyEquivalent="q" id="4sb-4s-VLi">
+                                            <connections>
+                                                <action selector="terminate:" target="Ady-hI-5gd" id="Te7-pn-YzF"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                            <menuItem title="Help" id="wpr-3q-Mcd">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="Help" systemMenu="help" id="F2S-fz-NVQ">
+                                    <items>
+                                        <menuItem title="Predix Mobile Help" keyEquivalent="?" id="FKE-Sm-Kum">
+                                            <connections>
+                                                <action selector="showHelp:" target="Ady-hI-5gd" id="y7X-2Q-9no"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                        </items>
+                    </menu>
+                    <connections>
+                        <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
+                    </connections>
+                </application>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="PredixMobileMacOS" customModuleProvider="target"/>
+                <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-74" y="-572"/>
+        </scene>
+        <!--Window Controller-->
+        <scene sceneID="R2V-B0-nI4">
+            <objects>
+                <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
+                    <window key="window" title="Predix Mobile Demo Mac App" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" hidesOnDeactivate="YES" oneShot="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="50" y="50" width="600" height="800"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
+                    </window>
+                    <connections>
+                        <segue destination="XfG-lQ-9wD" kind="relationship" relationship="window.shadowedContentViewController" id="cq2-FE-JQM"/>
+                    </connections>
+                </windowController>
+                <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-611" y="-183"/>
+        </scene>
+        <!--Preferences-->
+        <scene sceneID="5o0-gl-VdD">
+            <objects>
+                <viewController title="Preferences" storyboardIdentifier="PreferencesViewController" showSeguePresentationStyle="single" id="HAs-Eg-bBJ" customClass="PreferencesViewController" customModule="PredixMobileMacOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="tcD-7a-uWX">
+                        <rect key="frame" x="0.0" y="0.0" width="554" height="265"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <stackView orientation="vertical" alignment="leading" spacing="11" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uo0-BU-jMV">
+                                <rect key="frame" x="20" y="20" width="514" height="225"/>
+                                <beginningViews>
+                                    <stackView orientation="horizontal" alignment="centerY" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DFU-T5-iiT">
+                                        <rect key="frame" x="0.0" y="202" width="514" height="23"/>
+                                        <beginningViews>
+                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QNQ-SZ-R1Y">
+                                                <rect key="frame" x="-2" y="3" width="88" height="17"/>
+                                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Logging Level" id="d2j-ge-44B">
+                                                    <font key="font" metaFont="system"/>
+                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                            </textField>
+                                            <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="U1r-Ir-1ad">
+                                                <rect key="frame" x="90" y="-2" width="204" height="25"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="200" id="kzC-zG-aqL"/>
+                                                </constraints>
+                                                <sliderCell key="cell" continuous="YES" state="on" alignment="left" maxValue="6" doubleValue="4" tickMarkPosition="above" numberOfTickMarks="7" allowsTickMarkValuesOnly="YES" sliderType="linear" id="f0c-4N-vtc"/>
+                                                <connections>
+                                                    <action selector="loggingLevelSliderChanged:" target="HAs-Eg-bBJ" id="SYi-el-8Ch"/>
+                                                </connections>
+                                            </slider>
+                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="utK-qR-owd">
+                                                <rect key="frame" x="298" y="3" width="27" height="17"/>
+                                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Info" id="d7S-lm-cdO">
+                                                    <font key="font" metaFont="system"/>
+                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                            </textField>
+                                        </beginningViews>
+                                        <visibilityPriorities>
+                                            <integer value="1000"/>
+                                            <integer value="1000"/>
+                                            <integer value="1000"/>
+                                        </visibilityPriorities>
+                                        <customSpacing>
+                                            <real value="3.4028234663852886e+38"/>
+                                            <real value="3.4028234663852886e+38"/>
+                                            <real value="3.4028234663852886e+38"/>
+                                        </customSpacing>
+                                    </stackView>
+                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AIP-hX-mM8">
+                                        <rect key="frame" x="-2" y="175" width="166" height="18"/>
+                                        <buttonCell key="cell" type="check" title="Trace Logs all Requests" bezelStyle="regularSquare" imagePosition="right" alignment="left" state="on" inset="2" id="dQk-yr-NFa">
+                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="traceRequestsChanged:" target="HAs-Eg-bBJ" id="8Pw-t2-yN1"/>
+                                        </connections>
+                                    </button>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dyo-br-s4V">
+                                        <rect key="frame" x="-2" y="149" width="505" height="17"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Warning--Changing the server will result in erasure of any existing application data" id="DC9-r2-Xa6">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <stackView distribution="fillProportionally" orientation="horizontal" alignment="centerY" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nIf-LZ-VrK">
+                                        <rect key="frame" x="0.0" y="116" width="514" height="22"/>
+                                        <subviews>
+                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AqP-S5-gEG">
+                                                <rect key="frame" x="-2" y="3" width="44" height="17"/>
+                                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Server" id="Cll-5C-6Lt">
+                                                    <font key="font" metaFont="system"/>
+                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                            </textField>
+                                            <textField verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GC0-vZ-edG">
+                                                <rect key="frame" x="48" y="0.0" width="466" height="22"/>
+                                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="Ybb-Nl-qMg">
+                                                    <font key="font" metaFont="system"/>
+                                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                                <connections>
+                                                    <outlet property="delegate" destination="HAs-Eg-bBJ" id="HTU-qf-qxG"/>
+                                                </connections>
+                                            </textField>
+                                        </subviews>
+                                        <visibilityPriorities>
+                                            <integer value="1000"/>
+                                            <integer value="1000"/>
+                                        </visibilityPriorities>
+                                        <customSpacing>
+                                            <real value="3.4028234663852886e+38"/>
+                                            <real value="3.4028234663852886e+38"/>
+                                        </customSpacing>
+                                    </stackView>
+                                </beginningViews>
+                                <endViews>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="TRb-Q2-gE8">
+                                        <rect key="frame" x="201" y="13" width="112" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="tr7-tN-dOD"/>
+                                        </constraints>
+                                        <buttonCell key="cell" type="push" title="Save" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ZBf-zy-ooH">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="saveClicked:" target="HAs-Eg-bBJ" id="oaf-kf-HMf"/>
+                                        </connections>
+                                    </button>
+                                </endViews>
+                                <constraints>
+                                    <constraint firstItem="nIf-LZ-VrK" firstAttribute="leading" secondItem="uo0-BU-jMV" secondAttribute="leading" id="0dd-Dj-vNj"/>
+                                    <constraint firstAttribute="bottom" secondItem="TRb-Q2-gE8" secondAttribute="bottom" constant="20" id="SjI-y2-x8D"/>
+                                    <constraint firstAttribute="trailing" secondItem="DFU-T5-iiT" secondAttribute="trailing" id="Tcx-se-uU6"/>
+                                    <constraint firstItem="TRb-Q2-gE8" firstAttribute="centerX" secondItem="uo0-BU-jMV" secondAttribute="centerX" id="gkZ-Q2-z2N"/>
+                                    <constraint firstAttribute="trailing" secondItem="nIf-LZ-VrK" secondAttribute="trailing" id="oj7-3j-rYl"/>
+                                    <constraint firstItem="DFU-T5-iiT" firstAttribute="leading" secondItem="uo0-BU-jMV" secondAttribute="leading" id="zdQ-aG-aWI"/>
+                                </constraints>
+                                <visibilityPriorities>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                </visibilityPriorities>
+                                <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                </customSpacing>
+                            </stackView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="uo0-BU-jMV" secondAttribute="trailing" constant="20" id="9v6-DH-0N4"/>
+                            <constraint firstItem="uo0-BU-jMV" firstAttribute="top" secondItem="tcD-7a-uWX" secondAttribute="top" constant="20" id="VQO-up-PU3"/>
+                            <constraint firstItem="uo0-BU-jMV" firstAttribute="leading" secondItem="tcD-7a-uWX" secondAttribute="leading" constant="20" id="VUi-HX-R2U"/>
+                            <constraint firstAttribute="bottom" secondItem="uo0-BU-jMV" secondAttribute="bottom" constant="20" id="uPN-TL-jtp"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="loggingLevelLabel" destination="utK-qR-owd" id="ffu-9y-g1B"/>
+                        <outlet property="loggingLevelSlider" destination="U1r-Ir-1ad" id="yb3-dZ-7C3"/>
+                        <outlet property="saveButton" destination="TRb-Q2-gE8" id="MIU-bL-vKl"/>
+                        <outlet property="serverInput" destination="GC0-vZ-edG" id="eo4-n8-9Cr"/>
+                        <outlet property="traceRequestsButton" destination="AIP-hX-mM8" id="8Q0-sM-Xjx"/>
+                    </connections>
+                </viewController>
+                <customObject id="Ieg-ow-Lbd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1" y="-306.5"/>
+        </scene>
+        <!--Main View Controller-->
+        <scene sceneID="hIz-AP-VOD">
+            <objects>
+                <viewController storyboardIdentifier="MainViewController" showSeguePresentationStyle="single" id="XfG-lQ-9wD" customClass="MainViewController" customModule="PredixMobileMacOS" sceneMemberID="viewController">
+                    <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="800"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <webView translatesAutoresizingMaskIntoConstraints="NO" id="CPX-Xt-FyH">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="800"/>
+                                <webPreferences key="preferences" defaultFontSize="16" defaultFixedFontSize="13" minimumFontSize="0" plugInsEnabled="NO" javaEnabled="NO" javaScriptCanOpenWindowsAutomatically="NO">
+                                    <nil key="identifier"/>
+                                </webPreferences>
+                            </webView>
+                            <progressIndicator hidden="YES" wantsLayer="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" displayedWhenStopped="NO" bezeled="NO" indeterminate="YES" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="uZj-Q6-44P">
+                                <rect key="frame" x="284" y="384" width="32" height="32"/>
+                            </progressIndicator>
+                            <textField hidden="YES" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="V0E-av-9bb">
+                                <rect key="frame" x="254" y="359" width="92" height="17"/>
+                                <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" title="Multiline Label" id="5DS-9G-hkL">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="uZj-Q6-44P" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="2Bo-4G-g6g"/>
+                            <constraint firstAttribute="trailing" secondItem="CPX-Xt-FyH" secondAttribute="trailing" id="Hog-yj-Wdo"/>
+                            <constraint firstItem="CPX-Xt-FyH" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="Q5q-Vu-dYi"/>
+                            <constraint firstItem="V0E-av-9bb" firstAttribute="top" secondItem="uZj-Q6-44P" secondAttribute="bottom" constant="8" id="dDG-pe-PbI"/>
+                            <constraint firstItem="uZj-Q6-44P" firstAttribute="centerY" secondItem="m2S-Jp-Qdl" secondAttribute="centerY" id="fk1-e2-L72"/>
+                            <constraint firstItem="CPX-Xt-FyH" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="mGJ-Qb-WKv"/>
+                            <constraint firstAttribute="bottom" secondItem="CPX-Xt-FyH" secondAttribute="bottom" id="o40-q3-3YP"/>
+                            <constraint firstItem="V0E-av-9bb" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="sPO-NC-VQZ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="spinner" destination="uZj-Q6-44P" id="nz6-LH-MwT"/>
+                        <outlet property="spinnerLabel" destination="V0E-av-9bb" id="EYv-go-EkV"/>
+                        <outlet property="webView" destination="CPX-Xt-FyH" id="O5Y-f6-Qqc"/>
+                    </connections>
+                </viewController>
+                <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-862" y="806"/>
+        </scene>
+        <!--Authentication-->
+        <scene sceneID="BmQ-5k-hQe">
+            <objects>
+                <viewController title="Authentication" storyboardIdentifier="AuthViewController" showSeguePresentationStyle="single" id="S89-VS-Fn2" customClass="AuthViewController" customModule="PredixMobileMacOS" sceneMemberID="viewController">
+                    <view key="view" id="JC3-xK-RLx">
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="600"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <webView maintainsBackForwardList="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xUa-bO-q8m">
+                                <rect key="frame" x="0.0" y="0.0" width="400" height="600"/>
+                                <webPreferences key="preferences" defaultFontSize="16" defaultFixedFontSize="13" minimumFontSize="0" plugInsEnabled="NO" javaEnabled="NO" javaScriptCanOpenWindowsAutomatically="NO">
+                                    <nil key="identifier"/>
+                                </webPreferences>
+                                <connections>
+                                    <outlet property="frameLoadDelegate" destination="S89-VS-Fn2" id="OnA-en-F41"/>
+                                </connections>
+                            </webView>
+                            <progressIndicator hidden="YES" wantsLayer="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" displayedWhenStopped="NO" bezeled="NO" indeterminate="YES" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="h0c-lZ-6c3">
+                                <rect key="frame" x="184" y="284" width="32" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="32" id="DUl-Mk-o7f"/>
+                                    <constraint firstAttribute="height" constant="32" id="qJI-de-tqN"/>
+                                </constraints>
+                            </progressIndicator>
+                            <textField hidden="YES" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="ugw-J2-juH">
+                                <rect key="frame" x="154" y="259" width="92" height="17"/>
+                                <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" title="Multiline Label" id="MfM-pg-EaO">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="xUa-bO-q8m" firstAttribute="leading" secondItem="JC3-xK-RLx" secondAttribute="leading" id="Jvy-fE-a31"/>
+                            <constraint firstAttribute="bottom" secondItem="xUa-bO-q8m" secondAttribute="bottom" id="L25-NR-4dF"/>
+                            <constraint firstItem="ugw-J2-juH" firstAttribute="centerX" secondItem="JC3-xK-RLx" secondAttribute="centerX" id="ZR3-zt-zFz"/>
+                            <constraint firstItem="h0c-lZ-6c3" firstAttribute="centerX" secondItem="JC3-xK-RLx" secondAttribute="centerX" id="aTU-OM-HXL"/>
+                            <constraint firstAttribute="trailing" secondItem="xUa-bO-q8m" secondAttribute="trailing" id="ahF-PX-biY"/>
+                            <constraint firstItem="xUa-bO-q8m" firstAttribute="top" secondItem="JC3-xK-RLx" secondAttribute="top" id="gsF-FM-drF"/>
+                            <constraint firstItem="h0c-lZ-6c3" firstAttribute="centerY" secondItem="JC3-xK-RLx" secondAttribute="centerY" id="hSs-he-Lvu"/>
+                            <constraint firstItem="ugw-J2-juH" firstAttribute="top" secondItem="h0c-lZ-6c3" secondAttribute="bottom" constant="8" id="sql-b8-UC3"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="spinner" destination="h0c-lZ-6c3" id="tkN-XE-arv"/>
+                        <outlet property="spinnerLabel" destination="ugw-J2-juH" id="wVG-dN-9Qo"/>
+                        <outlet property="webView" destination="xUa-bO-q8m" id="QjL-Au-CH2"/>
+                    </connections>
+                </viewController>
+                <customObject id="qnt-jK-1Nk" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-252" y="700"/>
+        </scene>
+    </scenes>
+</document>

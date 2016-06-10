@@ -1,0 +1,573 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4F292CC51D0B475500A429D6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4F292CC31D0B475500A429D6 /* Localizable.strings */; };
+		4F6383F81D074A530035DF52 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6383F71D074A530035DF52 /* AppDelegate.swift */; };
+		4F6383FA1D074A530035DF52 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6383F91D074A530035DF52 /* MainViewController.swift */; };
+		4F6383FC1D074A530035DF52 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F6383FB1D074A530035DF52 /* Assets.xcassets */; };
+		4F6383FF1D074A530035DF52 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F6383FD1D074A530035DF52 /* Main.storyboard */; };
+		4F63840A1D074A530035DF52 /* PredixMobileMacOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6384091D074A530035DF52 /* PredixMobileMacOSTests.swift */; };
+		4F6384151D074A530035DF52 /* PredixMobileMacOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6384141D074A530035DF52 /* PredixMobileMacOSUITests.swift */; };
+		4FBEBC871D077D3700AC5274 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBEBC861D077D3700AC5274 /* AuthViewController.swift */; };
+		4FBEBC8A1D077D8E00AC5274 /* PredixMobileSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FBEBC891D077D8E00AC5274 /* PredixMobileSDK.framework */; };
+		4FBEBC8D1D07859800AC5274 /* PredixMobileSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FBEBC891D077D8E00AC5274 /* PredixMobileSDK.framework */; };
+		4FBEBC8E1D07859800AC5274 /* PredixMobileSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4FBEBC891D077D8E00AC5274 /* PredixMobileSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4FD843DE1D089F5C008D6CDA /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD843DC1D089F5C008D6CDA /* PreferencesViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4F6384061D074A530035DF52 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4F6383EC1D074A530035DF52 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4F6383F31D074A530035DF52;
+			remoteInfo = PredixMobileMacOS;
+		};
+		4F6384111D074A530035DF52 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4F6383EC1D074A530035DF52 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4F6383F31D074A530035DF52;
+			remoteInfo = PredixMobileMacOS;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		4FBEBC8F1D07859900AC5274 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				4FBEBC8E1D07859800AC5274 /* PredixMobileSDK.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		4F292CC41D0B475500A429D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4F6383F41D074A530035DF52 /* PredixMobileMacOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PredixMobileMacOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F6383F71D074A530035DF52 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4F6383F91D074A530035DF52 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		4F6383FB1D074A530035DF52 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4F6383FE1D074A530035DF52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4F6384001D074A530035DF52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4F6384051D074A530035DF52 /* PredixMobileMacOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PredixMobileMacOS.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F6384091D074A530035DF52 /* PredixMobileMacOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredixMobileMacOSTests.swift; sourceTree = "<group>"; };
+		4F63840B1D074A530035DF52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4F6384101D074A530035DF52 /* PredixMobileMacOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PredixMobileMacOS.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F6384141D074A530035DF52 /* PredixMobileMacOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredixMobileMacOSUITests.swift; sourceTree = "<group>"; };
+		4F6384161D074A530035DF52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4FBEBC861D077D3700AC5274 /* AuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		4FBEBC891D077D8E00AC5274 /* PredixMobileSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PredixMobileSDK.framework; sourceTree = "<group>"; };
+		4FBEBC8C1D077DBE00AC5274 /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
+		4FD843DC1D089F5C008D6CDA /* PreferencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4F6383F11D074A530035DF52 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4FBEBC8A1D077D8E00AC5274 /* PredixMobileSDK.framework in Frameworks */,
+				4FBEBC8D1D07859800AC5274 /* PredixMobileSDK.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4F6384021D074A530035DF52 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4F63840D1D074A530035DF52 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4F6383EB1D074A530035DF52 = {
+			isa = PBXGroup;
+			children = (
+				4FBEBC881D077D8E00AC5274 /* Frameworks */,
+				4F6383F61D074A530035DF52 /* PredixMobileMacOS */,
+				4F6384081D074A530035DF52 /* PredixMobileMacOSTests */,
+				4F6384131D074A530035DF52 /* PredixMobileMacOSUITests */,
+				4F6383F51D074A530035DF52 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4F6383F51D074A530035DF52 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4F6383F41D074A530035DF52 /* PredixMobileMacOS.app */,
+				4F6384051D074A530035DF52 /* PredixMobileMacOS.xctest */,
+				4F6384101D074A530035DF52 /* PredixMobileMacOS.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4F6383F61D074A530035DF52 /* PredixMobileMacOS */ = {
+			isa = PBXGroup;
+			children = (
+				4FBEBC8B1D077DBE00AC5274 /* CouchbaseLite */,
+				4F6383F71D074A530035DF52 /* AppDelegate.swift */,
+				4F6383F91D074A530035DF52 /* MainViewController.swift */,
+				4FBEBC861D077D3700AC5274 /* AuthViewController.swift */,
+				4FD843DC1D089F5C008D6CDA /* PreferencesViewController.swift */,
+				4F6383FB1D074A530035DF52 /* Assets.xcassets */,
+				4F6383FD1D074A530035DF52 /* Main.storyboard */,
+				4F6384001D074A530035DF52 /* Info.plist */,
+				4F292CC31D0B475500A429D6 /* Localizable.strings */,
+			);
+			path = PredixMobileMacOS;
+			sourceTree = "<group>";
+		};
+		4F6384081D074A530035DF52 /* PredixMobileMacOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				4F6384091D074A530035DF52 /* PredixMobileMacOSTests.swift */,
+				4F63840B1D074A530035DF52 /* Info.plist */,
+			);
+			path = PredixMobileMacOSTests;
+			sourceTree = "<group>";
+		};
+		4F6384131D074A530035DF52 /* PredixMobileMacOSUITests */ = {
+			isa = PBXGroup;
+			children = (
+				4F6384141D074A530035DF52 /* PredixMobileMacOSUITests.swift */,
+				4F6384161D074A530035DF52 /* Info.plist */,
+			);
+			path = PredixMobileMacOSUITests;
+			sourceTree = "<group>";
+		};
+		4FBEBC881D077D8E00AC5274 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4FBEBC891D077D8E00AC5274 /* PredixMobileSDK.framework */,
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		4FBEBC8B1D077DBE00AC5274 /* CouchbaseLite */ = {
+			isa = PBXGroup;
+			children = (
+				4FBEBC8C1D077DBE00AC5274 /* module.modulemap */,
+			);
+			path = CouchbaseLite;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4F6383F31D074A530035DF52 /* PredixMobileMacOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4F6384191D074A530035DF52 /* Build configuration list for PBXNativeTarget "PredixMobileMacOS" */;
+			buildPhases = (
+				4F6383F01D074A530035DF52 /* Sources */,
+				4F6383F11D074A530035DF52 /* Frameworks */,
+				4F6383F21D074A530035DF52 /* Resources */,
+				4FBEBC8F1D07859900AC5274 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PredixMobileMacOS;
+			productName = PredixMobileMacOS;
+			productReference = 4F6383F41D074A530035DF52 /* PredixMobileMacOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4F6384041D074A530035DF52 /* PredixMobileMacOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4F63841C1D074A530035DF52 /* Build configuration list for PBXNativeTarget "PredixMobileMacOSTests" */;
+			buildPhases = (
+				4F6384011D074A530035DF52 /* Sources */,
+				4F6384021D074A530035DF52 /* Frameworks */,
+				4F6384031D074A530035DF52 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4F6384071D074A530035DF52 /* PBXTargetDependency */,
+			);
+			name = PredixMobileMacOSTests;
+			productName = PredixMobileMacOSTests;
+			productReference = 4F6384051D074A530035DF52 /* PredixMobileMacOS.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		4F63840F1D074A530035DF52 /* PredixMobileMacOSUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4F63841F1D074A530035DF52 /* Build configuration list for PBXNativeTarget "PredixMobileMacOSUITests" */;
+			buildPhases = (
+				4F63840C1D074A530035DF52 /* Sources */,
+				4F63840D1D074A530035DF52 /* Frameworks */,
+				4F63840E1D074A530035DF52 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4F6384121D074A530035DF52 /* PBXTargetDependency */,
+			);
+			name = PredixMobileMacOSUITests;
+			productName = PredixMobileMacOSUITests;
+			productReference = 4F6384101D074A530035DF52 /* PredixMobileMacOS.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4F6383EC1D074A530035DF52 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = GE;
+				TargetAttributes = {
+					4F6383F31D074A530035DF52 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					4F6384041D074A530035DF52 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 4F6383F31D074A530035DF52;
+					};
+					4F63840F1D074A530035DF52 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 4F6383F31D074A530035DF52;
+					};
+				};
+			};
+			buildConfigurationList = 4F6383EF1D074A530035DF52 /* Build configuration list for PBXProject "PredixMobileMacOS" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4F6383EB1D074A530035DF52;
+			productRefGroup = 4F6383F51D074A530035DF52 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4F6383F31D074A530035DF52 /* PredixMobileMacOS */,
+				4F6384041D074A530035DF52 /* PredixMobileMacOSTests */,
+				4F63840F1D074A530035DF52 /* PredixMobileMacOSUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4F6383F21D074A530035DF52 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F6383FC1D074A530035DF52 /* Assets.xcassets in Resources */,
+				4F292CC51D0B475500A429D6 /* Localizable.strings in Resources */,
+				4F6383FF1D074A530035DF52 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4F6384031D074A530035DF52 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4F63840E1D074A530035DF52 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4F6383F01D074A530035DF52 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F6383FA1D074A530035DF52 /* MainViewController.swift in Sources */,
+				4FBEBC871D077D3700AC5274 /* AuthViewController.swift in Sources */,
+				4F6383F81D074A530035DF52 /* AppDelegate.swift in Sources */,
+				4FD843DE1D089F5C008D6CDA /* PreferencesViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4F6384011D074A530035DF52 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F63840A1D074A530035DF52 /* PredixMobileMacOSTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4F63840C1D074A530035DF52 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F6384151D074A530035DF52 /* PredixMobileMacOSUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4F6384071D074A530035DF52 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4F6383F31D074A530035DF52 /* PredixMobileMacOS */;
+			targetProxy = 4F6384061D074A530035DF52 /* PBXContainerItemProxy */;
+		};
+		4F6384121D074A530035DF52 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4F6383F31D074A530035DF52 /* PredixMobileMacOS */;
+			targetProxy = 4F6384111D074A530035DF52 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4F292CC31D0B475500A429D6 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4F292CC41D0B475500A429D6 /* Base */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		4F6383FD1D074A530035DF52 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4F6383FE1D074A530035DF52 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4F6384171D074A530035DF52 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4F6384181D074A530035DF52 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		4F63841A1D074A530035DF52 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
+				INFOPLIST_FILE = PredixMobileMacOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ge.PredixMobileMacOS;
+				PRODUCT_NAME = PredixMobileMacOS;
+				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/$(PRODUCT_NAME)";
+			};
+			name = Debug;
+		};
+		4F63841B1D074A530035DF52 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
+				INFOPLIST_FILE = PredixMobileMacOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ge.PredixMobileMacOS;
+				PRODUCT_NAME = PredixMobileMacOS;
+				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/$(PRODUCT_NAME)";
+			};
+			name = Release;
+		};
+		4F63841D1D074A530035DF52 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = PredixMobileMacOSTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ge.PredixMobileMacOSTests;
+				PRODUCT_NAME = PredixMobileMacOS;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PredixMobileMacOS.app/Contents/MacOS/PredixMobileMacOS";
+			};
+			name = Debug;
+		};
+		4F63841E1D074A530035DF52 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = PredixMobileMacOSTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ge.PredixMobileMacOSTests;
+				PRODUCT_NAME = PredixMobileMacOS;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PredixMobileMacOS.app/Contents/MacOS/PredixMobileMacOS";
+			};
+			name = Release;
+		};
+		4F6384201D074A530035DF52 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = PredixMobileMacOSUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ge.PredixMobileMacOSUITests;
+				PRODUCT_NAME = PredixMobileMacOS;
+				TEST_TARGET_NAME = PredixMobileMacOS;
+			};
+			name = Debug;
+		};
+		4F6384211D074A530035DF52 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = PredixMobileMacOSUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ge.PredixMobileMacOSUITests;
+				PRODUCT_NAME = PredixMobileMacOS;
+				TEST_TARGET_NAME = PredixMobileMacOS;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4F6383EF1D074A530035DF52 /* Build configuration list for PBXProject "PredixMobileMacOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4F6384171D074A530035DF52 /* Debug */,
+				4F6384181D074A530035DF52 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4F6384191D074A530035DF52 /* Build configuration list for PBXNativeTarget "PredixMobileMacOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4F63841A1D074A530035DF52 /* Debug */,
+				4F63841B1D074A530035DF52 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4F63841C1D074A530035DF52 /* Build configuration list for PBXNativeTarget "PredixMobileMacOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4F63841D1D074A530035DF52 /* Debug */,
+				4F63841E1D074A530035DF52 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4F63841F1D074A530035DF52 /* Build configuration list for PBXNativeTarget "PredixMobileMacOSUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4F6384201D074A530035DF52 /* Debug */,
+				4F6384211D074A530035DF52 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4F6383EC1D074A530035DF52 /* Project object */;
+}
