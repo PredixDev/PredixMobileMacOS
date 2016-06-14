@@ -53,6 +53,16 @@ Once the server hostname is entered and saved, you should be presented with the 
 
 Logging by default is set at "Info" level. There are two more informative levels that can give you more information for debugging problems: Debug, and Trace.
 
+### Enable debugging console:
+
+To enable the debug console in the PredixMobileMacOS project run this command in Terminal:
+
+    defaults write com.ge.PredixMobileMacOS WebKitDeveloperExtras -bool true
+
+Then you can right-click or ctrl-click on the PredixMobileMacOS UI and select “Inspect Element” to bring up the debug console.
+
+Note, if you change the bundle id of the project you need to use the correct bundle id in the command above. A more generic version of the command is: `defaults write <your bundle id> WebKitDeveloperExtras -bool true`
+
 ### I see a popup message: "Authentication failed" but I never saw the authentication page.
 
 Reviewing the logs you will see various network error messages, and messages indicating you cannot connect to the backend.
