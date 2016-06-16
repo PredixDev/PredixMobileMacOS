@@ -36,11 +36,20 @@ class PreferencesViewController: NSViewController, NSTextFieldDelegate {
         
         self.saveButton.hidden = !self.initalStartup
         self.saveButton.enabled = self.serverInput.cell!.title.characters.count > 0
+        
+        if let window = self.view.window where self.initalStartup
+        {
+            // allow app to close even if this sheet is showing.
+            window.preventsApplicationTerminationWhenModal = false
+            
+            //When displayed as a sheet, prevent from being able to resize
+            window.minSize = window.frame.size
+            window.maxSize = window.frame.size
+        }
     }
     
     override func viewWillDisappear()
     {
-        print(#function)
         self.releaseServerField()
         self.saveSettings()
     }
@@ -78,14 +87,17 @@ class PreferencesViewController: NSViewController, NSTextFieldDelegate {
     ///Saves changes made in the UI to NSDefaults.
     func saveSettings()
     {
-        let defaults = NSUserDefaults.standardUserDefaults()
-        
-        defaults.setValue(self.traceRequestsButton.state == 1, forKey: PredixMobilityConfiguration.traceLogsRequestsConfigKey)
-        defaults.setValue(self.loggingLevelSlider.integerValue, forKey: PredixMobilityConfiguration.loggingLevelConfigKey)
-        defaults.setValue(self.serverInput.cell!.title, forKey: PredixMobilityConfiguration.serverEndpointConfigKey)
-        
-        defaults.synchronize()
-        print("Saved settings")
+        // don't save if there is no server endpoint configured.
+        if self.serverInput.cell?.title != ""
+        {
+            let defaults = NSUserDefaults.standardUserDefaults()
+            
+            defaults.setValue(self.traceRequestsButton.state == 1, forKey: PredixMobilityConfiguration.traceLogsRequestsConfigKey)
+            defaults.setValue(self.loggingLevelSlider.integerValue, forKey: PredixMobilityConfiguration.loggingLevelConfigKey)
+            defaults.setValue(self.serverInput.cell!.title, forKey: PredixMobilityConfiguration.serverEndpointConfigKey)
+            
+            defaults.synchronize()
+        }
     }
     
     // Initializes the UI with settings stored in NSDefaults.

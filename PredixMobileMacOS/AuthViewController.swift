@@ -26,6 +26,15 @@ class AuthViewController: NSViewController, WebFrameLoadDelegate, PredixAppWindo
         if let window = self.view.window
         {
             window.preventsApplicationTerminationWhenModal = false
+
+            //prevent sheet from being able to shrink
+            window.minSize = window.frame.size
+            
+            //prevent sheet from being able to grow larger than the parent window.
+            if let sheetParent = window.sheetParent
+            {
+                window.maxSize = sheetParent.frame.size
+            }
         }
     }
     

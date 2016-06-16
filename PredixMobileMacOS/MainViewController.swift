@@ -51,8 +51,6 @@ class MainViewController: NSViewController, WebFrameLoadDelegate, PredixAppWindo
     ///Validates that we have established our initial settings (like server hostname)
     func validateKeyPreferences()
     {
-        //
-        print(#function)
         if NSUserDefaults.standardUserDefaults().valueForKey(PredixMobilityConfiguration.serverEndpointConfigKey) == nil
         {
             let storyboard = self.storyboard!
@@ -100,8 +98,6 @@ class MainViewController: NSViewController, WebFrameLoadDelegate, PredixAppWindo
     ///Initializes the SDK and starts it.
     func startPredixMobileSDK()
     {
-        print(#function)
-        
         // this sets up how the serious error popup will be displayed. Alternatively, a web-based error page can be used, but for this example
         // we're using a native page. See the PredixMobileiOS project for an example of an embedded web-based error page.
         PredixMobilityConfiguration.displaySeriousErrorPopup = self.displaySeriousErrorPopup
