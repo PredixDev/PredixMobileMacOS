@@ -155,8 +155,8 @@
                                         </customSpacing>
                                     </stackView>
                                     <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AIP-hX-mM8">
-                                        <rect key="frame" x="-2" y="175" width="166" height="18"/>
-                                        <buttonCell key="cell" type="check" title="Trace Logs all Requests" bezelStyle="regularSquare" imagePosition="right" alignment="left" state="on" inset="2" id="dQk-yr-NFa">
+                                        <rect key="frame" x="-2" y="175" width="242" height="18"/>
+                                        <buttonCell key="cell" type="check" title="Trace logging level logs all Requests" bezelStyle="regularSquare" imagePosition="right" alignment="left" inset="2" id="dQk-yr-NFa">
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
@@ -165,8 +165,8 @@
                                         </connections>
                                     </button>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dyo-br-s4V">
-                                        <rect key="frame" x="-2" y="149" width="505" height="17"/>
-                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Warning--Changing the server will result in erasure of any existing application data" id="DC9-r2-Xa6">
+                                        <rect key="frame" x="-2" y="149" width="454" height="17"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Warning: You will lose application data if you change your server endpoint." id="DC9-r2-Xa6">
                                             <font key="font" metaFont="system"/>
                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
