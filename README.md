@@ -3,48 +3,18 @@
 This project is the sample reference application for the Predix Mobile Container on the MacOS platform.
 
 ##Getting Started
-### Step 0 - Prerequisites
-It is assumed you already have a Predix Mobile cloud services installation, have installed the Predix Mobile command line tool, and have followed the Getting Started examples for those repos to publish your initial Predix Mobile webapp, define your Predix Mobile app, and import the sample data. 
+It is assumed you already have a Predix Mobile cloud services installation, have installed the Predix Mobile command line tool, and have completed the steps in the following topics to publish your initial Predix Mobile webapp, define your Predix Mobile app, and import the sample data:
 
-It is also assumed you're running on a Mac, with the latest version of XCode installed.
+* [Get Started with the Mobile Service and Mobile SDK] (https://www.predix.io/docs#rae4EfJ6) 
+* [Running the Predix Mobile Sample App] (https://www.predix.io/docs#EGUzWwcC)
+* [Creating a Mobile Hello World Webapp] (https://www.predix.io/docs#DrBWuHkl) 
 
-A basic understanding of how to use XCode is also assumed. For help with XCode consult Apple's documentation.
+It is also assumed you're running on a Mac, with XCode version 7.3 installed.
 
-### Step 1 - Clone Repo
+## Download the Container and Start the App
 
-Clone the repo to your Mac
-
-### Step 2 - Open the project file
-
-Open the PredixMobileMacOS.xcodeproj file in XCode.
-
-Written in Swift, this implementation is purposefully simple, and does not demonstrate every possible iteraction with the Predix Mobile SDK.
-
-### Step 3 - Validate the Predix Mobile App
-
-As one of the prerequistes, you defined a Predix Mobile App using the command line tool. The name and version of that pmapp is configured in the info.plist of the Predix Mobile Container.
-
-In XCode, find the Info.plist file. The plist keys pmapp_name, and pmapp_version should match the values used in your app.json file you defined.
-
-By default these settings are:
-
-    pmapp_name: Sample1
-    pmapp_version:  1.0
-
-### Step 4 - Run the project
-
-Run the project in XCode, the Predix Mobile Container should start.
-
-The first time the PredixMobileMacOS container starts, it will popup an alert where settings can be entered. The intial server hostname setting for your Predix Mobile backend is required. If you do not remember your hostname, you can find is using the pm api command from the command line:
-
-    :~ #] pm api
-    info: API> https://123456.run.aws-usw02-pr.ice.predix.io
-
-In the above example the server hostname is: 123456.run.aws-usw02-pr.ice.predix.io. This is what should be entered into the Server box of the preferences popup.
-
-Once entered, this preferences popup will not automatically appear again, however like all MacOS apps, the preferences can be accessed via the menu.
-
-Once the server hostname is entered and saved, you should be presented with the Predix login screen.
+* [Downloading the MacOS Predix Mobile App Container] (https://www.predix.io/docs#Z33mf56J)
+* [Starting your MacOS Sample App] (https://www.predix.io/docs/?r=146467#jKRPb468)
 
 
 ## TroubleShooting:
