@@ -27,7 +27,7 @@ class MainViewController: NSViewController, WebFrameLoadDelegate, PredixAppWindo
         self.view.window?.preventsApplicationTerminationWhenModal = false
     }
 
-    override var representedObject: AnyObject? {
+    override var representedObject: Any? {
         didSet {
         // Update the view, if already loaded.
         }
@@ -36,6 +36,7 @@ class MainViewController: NSViewController, WebFrameLoadDelegate, PredixAppWindo
     override func viewWillAppear()
     {
         self.startApp()
+        
     }
     
     //MARK: class methods
@@ -51,10 +52,10 @@ class MainViewController: NSViewController, WebFrameLoadDelegate, PredixAppWindo
     ///Validates that we have established our initial settings (like server hostname)
     func validateKeyPreferences()
     {
-        if NSUserDefaults.standardUserDefaults().valueForKey(PredixMobilityConfiguration.serverEndpointConfigKey) == nil
+        if UserDefaults.standard.value(forKey: PredixMobilityConfiguration.serverEndpointConfigKey) == nil
         {
             let storyboard = self.storyboard!
-            let prefVC = storyboard.instantiateControllerWithIdentifier("PreferencesViewController") as! PreferencesViewController
+            let prefVC = storyboard.instantiateController(withIdentifier: "PreferencesViewController") as! PreferencesViewController
             prefVC.initalStartup = true
             
             
@@ -71,18 +72,18 @@ class MainViewController: NSViewController, WebFrameLoadDelegate, PredixAppWindo
     }
 
     ///Displays a native error popup in the event of a error that prevents the SDK from loading the initial webapp.
-    func displaySeriousErrorPopup(errorMessage: String, retry: ()->())
+    func displaySeriousErrorPopup(_ errorMessage: String, retry: @escaping ()->())
     {
         let responseOK = 0
         let responseQuit = 0xFF
         
         let alert = NSAlert()
         alert.messageText = errorMessage
-        alert.addButtonWithTitle("Ok").tag = responseOK
-        alert.addButtonWithTitle("Quit").tag = responseQuit
-        alert.alertStyle = .CriticalAlertStyle
+        alert.addButton(withTitle: "Ok").tag = responseOK
+        alert.addButton(withTitle: "Quit").tag = responseQuit
+        alert.alertStyle = .critical
         
-        alert.beginSheetModalForWindow(self.view.window!) { (response: NSModalResponse) in
+        alert.beginSheetModal(for: self.view.window!, completionHandler: { (response: NSModalResponse) in
             if response == responseQuit
             {
                 exit(EXIT_FAILURE)
@@ -91,7 +92,7 @@ class MainViewController: NSViewController, WebFrameLoadDelegate, PredixAppWindo
             {
                 retry()
             }
-        }
+        }) 
 
     }
     
@@ -102,11 +103,12 @@ class MainViewController: NSViewController, WebFrameLoadDelegate, PredixAppWindo
         // we're using a native page. See the PredixMobileiOS project for an example of an embedded web-based error page.
         PredixMobilityConfiguration.displaySeriousErrorPopup = self.displaySeriousErrorPopup
         
+        PredixMobilityConfiguration.additionalBootServicesToRegister = [OpenURLService.self]
         PredixMobilityConfiguration.loadConfiguration()
         
         let pmm = PredixMobilityManager(packageWindow: self, presentAuthentication: {[unowned self] (packageWindow) -> (PredixAppWindowProtocol) in
             
-            let authVC = self.storyboard?.instantiateControllerWithIdentifier("AuthViewController") as! NSViewController
+            let authVC = self.storyboard?.instantiateController(withIdentifier: "AuthViewController") as! NSViewController
             let authWindow = NSWindow(contentViewController: authVC)
             
             self.view.window?.beginSheet(authWindow, completionHandler: nil)
@@ -118,7 +120,7 @@ class MainViewController: NSViewController, WebFrameLoadDelegate, PredixAppWindo
                 {
                     self.view.window?.endSheet(authVC.view.window!)
                 }
-                self.spinner.hidden = false
+                self.spinner.isHidden = false
                 self.spinner.startAnimation(nil)
                 
             })
@@ -128,54 +130,54 @@ class MainViewController: NSViewController, WebFrameLoadDelegate, PredixAppWindo
         // This notification tells the SDK the UI is ready for processing.
         // Since we're starting the SDK in a viewcontroller rather than the AppDelegate the system-level 
         // ApplicationDidBecomeActive notification that the SDK usually uses has already occured.
-        NSNotificationCenter.defaultCenter().postNotificationName(UIReadyNotification, object: nil)
+        NotificationCenter.default.post(name: UIReadyNotification, object: nil)
     }
     
     //MARK: PredixAppWindowProtocol methods
-    func loadURL(URL: NSURL, parameters: [NSObject : AnyObject]?, onComplete: (() -> ())?)
+    func loadURL(_ URL: Foundation.URL, parameters: [AnyHashable: Any]?, onComplete: (() -> ())?)
     {
         if let onComplete = onComplete
         {
             self.webViewFinishedLoad = onComplete
         }
         
-        webView.mainFrame.loadRequest(NSURLRequest(URL: URL))
+        webView.mainFrame.load(URLRequest(url: URL))
     }
     
-    func updateWaitState(state: PredixMobileSDK.WaitState, message: String?)
+    func updateWaitState(_ state: PredixMobileSDK.WaitState, message: String?)
     {
         switch state
         {
-        case .NotWaiting :
+        case .notWaiting :
             self.spinner.stopAnimation(nil)
-            self.spinner.hidden = true
+            self.spinner.isHidden = true
             self.spinnerLabel.cell?.title = ""
-            self.spinnerLabel.hidden = true
+            self.spinnerLabel.isHidden = true
             
-        case .Waiting :
+        case .waiting :
             
-            self.spinner.hidden = false
-            self.spinnerLabel.hidden = false
+            self.spinner.isHidden = false
+            self.spinnerLabel.isHidden = false
             self.spinner.startAnimation(nil)
             self.spinnerLabel.cell?.title = message ?? ""
         }
     }
     func waitState() -> (PredixMobileSDK.WaitStateReturn)
     {
-        return WaitStateReturn(state: self.spinner.hidden ? .NotWaiting : .Waiting, message: self.spinnerLabel.cell?.title)
+        return WaitStateReturn(state: self.spinner.isHidden ? .notWaiting : .waiting, message: self.spinnerLabel.cell?.title)
     }
     
-    func receiveAppNotification(script: String)
+    func receiveAppNotification(_ script: String)
     {
         webView.mainFrame.javaScriptContext.evaluateScript(script)
     }
     
     //MARK: WebFrameLoadDelegate methods
-    func webView(sender: WebView!, didFinishLoadForFrame frame: WebFrame!)
+    func webView(_ sender: WebView!, didFinishLoadFor frame: WebFrame!)
     {
        
-        PGSDKLogger.trace("Web view finished load")
-        self.spinner.hidden = true
+        Logger.trace("Web view finished load")
+        self.spinner.isHidden = true
         self.spinner.stopAnimation(nil)
         if let webViewFinishedLoad = self.webViewFinishedLoad
         {
@@ -184,28 +186,24 @@ class MainViewController: NSViewController, WebFrameLoadDelegate, PredixAppWindo
         }
     }
     
-    func webView(sender: WebView!, didFailLoadWithError error: NSError!, forFrame frame: WebFrame!)
+    func webView(_ sender: WebView!, didFailLoadWithError error: Error!, for frame: WebFrame!)
     {
-        self.spinner.hidden = true
+        self.spinner.isHidden = true
         self.spinner.stopAnimation(nil)
         
-        guard let error = error else
-        {
-            // no error object, nothing to do...
-            return
-        }
+        let err = error as NSError
         
         // Ignore cancelled and "Frame Load Interrupted" errors
-        if error.code == NSURLErrorCancelled {return}
-        if error.code == 102 && error.domain == "WebKitErrorDomain" {return}
+        if err.code == NSURLErrorCancelled {return}
+        if err.code == 102 && err.domain == "WebKitErrorDomain" {return}
         
-        PGSDKLogger.debug("Web view encountered loading error: \(error.description)")
-        ShowSeriousErrorHelper.ShowUserError(error.localizedDescription)
+        Logger.debug("Web view encountered loading error: \(err.description)")
+        ShowSeriousErrorHelper.ShowUserError(err.localizedDescription)
     }
     
-    func webView(sender: WebView!, didStartProvisionalLoadForFrame frame: WebFrame!) {
-        PGSDKLogger.trace("Web view starting load")
-        self.spinner.hidden = false
+    func webView(_ sender: WebView!, didStartProvisionalLoadFor frame: WebFrame!) {
+        Logger.trace("Web view starting load")
+        self.spinner.isHidden = false
         self.spinner.startAnimation(nil)
     }
 }

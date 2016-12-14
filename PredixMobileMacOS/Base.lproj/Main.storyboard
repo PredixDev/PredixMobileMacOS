@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10117"/>
-        <plugIn identifier="com.apple.WebKitIBPlugin" version="10117"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11542"/>
+        <plugIn identifier="com.apple.WebKitIBPlugin" version="11542"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
         <capability name="stacking Non-gravity area distributions on NSStackView" minToolsVersion="7.0" minSystemVersion="10.11"/>
     </dependencies>
     <scenes>
@@ -61,6 +64,44 @@
                                     </items>
                                 </menu>
                             </menuItem>
+                            <menuItem title="Edit" id="cmI-wg-O8J">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="Edit" id="iuf-z6-4H4">
+                                    <items>
+                                        <menuItem title="Undo" keyEquivalent="z" id="oeI-rn-r4y">
+                                            <connections>
+                                                <action selector="undo:" target="Ady-hI-5gd" id="ohc-yt-QEV"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Redo" keyEquivalent="Z" id="Mcv-fa-D6J">
+                                            <connections>
+                                                <action selector="redo:" target="Ady-hI-5gd" id="8dl-C1-KIn"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="u84-lx-DqH"/>
+                                        <menuItem title="Cut" keyEquivalent="x" id="Wne-Xl-Lpv">
+                                            <connections>
+                                                <action selector="cut:" target="Ady-hI-5gd" id="62y-Pg-hwi"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Copy" keyEquivalent="c" id="V7Y-N3-fCx">
+                                            <connections>
+                                                <action selector="copy:" target="Ady-hI-5gd" id="KrH-hU-3tN"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Paste" keyEquivalent="v" id="uyy-gY-XnP">
+                                            <connections>
+                                                <action selector="paste:" target="Ady-hI-5gd" id="zUv-7Q-vo7"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Select All" keyEquivalent="a" id="Sp9-ww-ioE">
+                                            <connections>
+                                                <action selector="selectAll:" target="Ady-hI-5gd" id="Vo7-DO-eye"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
                             <menuItem title="Help" id="wpr-3q-Mcd">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="Help" systemMenu="help" id="F2S-fz-NVQ">
@@ -107,17 +148,17 @@
             <objects>
                 <viewController title="Preferences" storyboardIdentifier="PreferencesViewController" showSeguePresentationStyle="single" id="HAs-Eg-bBJ" customClass="PreferencesViewController" customModule="PredixMobileMacOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="tcD-7a-uWX">
-                        <rect key="frame" x="0.0" y="0.0" width="554" height="201"/>
+                        <rect key="frame" x="0.0" y="0.0" width="554" height="200"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <stackView orientation="vertical" alignment="leading" spacing="11" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uo0-BU-jMV">
-                                <rect key="frame" x="20" y="20" width="514" height="161"/>
+                                <rect key="frame" x="20" y="18" width="514" height="162"/>
                                 <beginningViews>
                                     <stackView orientation="horizontal" alignment="centerY" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DFU-T5-iiT">
-                                        <rect key="frame" x="0.0" y="138" width="514" height="23"/>
+                                        <rect key="frame" x="0.0" y="138" width="514" height="24"/>
                                         <beginningViews>
-                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QNQ-SZ-R1Y">
-                                                <rect key="frame" x="-2" y="3" width="88" height="17"/>
+                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="QNQ-SZ-R1Y">
+                                                <rect key="frame" x="-2" y="4" width="88" height="17"/>
                                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Logging Level" id="d2j-ge-44B">
                                                     <font key="font" metaFont="system"/>
                                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -125,17 +166,14 @@
                                                 </textFieldCell>
                                             </textField>
                                             <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="U1r-Ir-1ad">
-                                                <rect key="frame" x="90" y="-2" width="204" height="25"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="200" id="EaW-5U-ZZk"/>
-                                                </constraints>
+                                                <rect key="frame" x="90" y="-2" width="395" height="26"/>
                                                 <sliderCell key="cell" continuous="YES" state="on" alignment="left" maxValue="6" doubleValue="4" tickMarkPosition="above" numberOfTickMarks="7" allowsTickMarkValuesOnly="YES" sliderType="linear" id="f0c-4N-vtc"/>
                                                 <connections>
                                                     <action selector="loggingLevelSliderChanged:" target="HAs-Eg-bBJ" id="SYi-el-8Ch"/>
                                                 </connections>
                                             </slider>
-                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="utK-qR-owd">
-                                                <rect key="frame" x="298" y="3" width="27" height="17"/>
+                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="utK-qR-owd">
+                                                <rect key="frame" x="489" y="4" width="27" height="17"/>
                                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Info" id="d7S-lm-cdO">
                                                     <font key="font" metaFont="system"/>
                                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -143,6 +181,13 @@
                                                 </textFieldCell>
                                             </textField>
                                         </beginningViews>
+                                        <constraints>
+                                            <constraint firstItem="QNQ-SZ-R1Y" firstAttribute="top" secondItem="DFU-T5-iiT" secondAttribute="top" constant="3" id="Ki7-lR-DGg"/>
+                                            <constraint firstItem="utK-qR-owd" firstAttribute="baseline" secondItem="QNQ-SZ-R1Y" secondAttribute="firstBaseline" id="Pqu-a1-heD"/>
+                                            <constraint firstItem="U1r-Ir-1ad" firstAttribute="centerY" secondItem="utK-qR-owd" secondAttribute="centerY" id="Uk7-Ri-nu0"/>
+                                            <constraint firstItem="QNQ-SZ-R1Y" firstAttribute="baseline" secondItem="utK-qR-owd" secondAttribute="firstBaseline" id="YOa-vr-44p"/>
+                                            <constraint firstItem="U1r-Ir-1ad" firstAttribute="top" secondItem="DFU-T5-iiT" secondAttribute="top" id="eq8-eC-42F"/>
+                                        </constraints>
                                         <visibilityPriorities>
                                             <integer value="1000"/>
                                             <integer value="1000"/>
@@ -261,7 +306,7 @@
                 </viewController>
                 <customObject id="Ieg-ow-Lbd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1" y="-339"/>
+            <point key="canvasLocation" x="-1" y="-339.5"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="hIz-AP-VOD">
@@ -276,6 +321,9 @@
                                 <webPreferences key="preferences" defaultFontSize="16" defaultFixedFontSize="13" minimumFontSize="0" plugInsEnabled="NO" javaEnabled="NO" javaScriptCanOpenWindowsAutomatically="NO">
                                     <nil key="identifier"/>
                                 </webPreferences>
+                                <connections>
+                                    <outlet property="frameLoadDelegate" destination="XfG-lQ-9wD" id="fej-tg-cXN"/>
+                                </connections>
                             </webView>
                             <progressIndicator hidden="YES" wantsLayer="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" displayedWhenStopped="NO" bezeled="NO" indeterminate="YES" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="uZj-Q6-44P">
                                 <rect key="frame" x="284" y="384" width="32" height="32"/>

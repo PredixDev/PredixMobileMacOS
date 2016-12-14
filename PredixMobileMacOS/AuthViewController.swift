@@ -40,46 +40,46 @@ class AuthViewController: NSViewController, WebFrameLoadDelegate, PredixAppWindo
     
 
     //MARK: PredixAppWindowProtocol methods
-    func loadURL(URL: NSURL, parameters: [NSObject : AnyObject]?, onComplete: (() -> ())?)
+    func loadURL(_ URL: Foundation.URL, parameters: [AnyHashable: Any]?, onComplete: (() -> ())?)
     {
         if let onComplete = onComplete
         {
             self.webViewFinishedLoad = onComplete
         }
         
-        webView.mainFrame.loadRequest(NSURLRequest(URL: URL))
+        webView.mainFrame.load(URLRequest(url: URL))
     }
     
-    func updateWaitState(state: PredixMobileSDK.WaitState, message: String?)
+    func updateWaitState(_ state: PredixMobileSDK.WaitState, message: String?)
     {
         switch state
         {
-        case .NotWaiting :
+        case .notWaiting :
             self.spinner.stopAnimation(nil)
-            self.spinner.hidden = true
+            self.spinner.isHidden = true
             self.spinnerLabel.cell?.title = ""
-            self.spinnerLabel.hidden = true
+            self.spinnerLabel.isHidden = true
             
-        case .Waiting :
+        case .waiting :
             
-            self.spinner.hidden = false
-            self.spinnerLabel.hidden = false
+            self.spinner.isHidden = false
+            self.spinnerLabel.isHidden = false
             self.spinner.startAnimation(nil)
             self.spinnerLabel.cell?.title = message ?? ""
         }
     }
     func waitState() -> (PredixMobileSDK.WaitStateReturn)
     {
-        return WaitStateReturn(state: self.spinner.hidden ? .NotWaiting : .Waiting, message: self.spinnerLabel.cell?.title)
+        return WaitStateReturn(state: self.spinner.isHidden ? .notWaiting : .waiting, message: self.spinnerLabel.cell?.title)
     }
     
     
     //MARK: WebFrameLoadDelegate methods
-    func webView(sender: WebView!, didFinishLoadForFrame frame: WebFrame!)
+    func webView(_ sender: WebView!, didFinishLoadFor frame: WebFrame!)
     {
         
-        PGSDKLogger.trace("Authentication web view finished load")
-        self.spinner.hidden = true
+        Logger.trace("Authentication web view finished load")
+        self.spinner.isHidden = true
         self.spinner.stopAnimation(nil)
         if let webViewFinishedLoad = self.webViewFinishedLoad
         {
@@ -88,28 +88,24 @@ class AuthViewController: NSViewController, WebFrameLoadDelegate, PredixAppWindo
         }
     }
     
-    func webView(sender: WebView!, didFailLoadWithError error: NSError!, forFrame frame: WebFrame!)
+    func webView(_ sender: WebView!, didFailLoadWithError error: Error!, for frame: WebFrame!)
     {
-        self.spinner.hidden = true
+        self.spinner.isHidden = true
         self.spinner.stopAnimation(nil)
         
-        guard let error = error else
-        {
-            // no error object, nothing to do...
-            return
-        }
+        let err = error as NSError
         
         // Ignore cancelled and "Frame Load Interrupted" errors
-        if error.code == NSURLErrorCancelled {return}
-        if error.code == 102 && error.domain == "WebKitErrorDomain" {return}
+        if err.code == NSURLErrorCancelled {return}
+        if err.code == 102 && err.domain == "WebKitErrorDomain" {return}
         
-        PGSDKLogger.debug("Authentication web view encountered loading error: \(error.description)")
-        ShowSeriousErrorHelper.ShowUserError(error.localizedDescription)
+        Logger.debug("Authentication web view encountered loading error: \(err.description)")
+        ShowSeriousErrorHelper.ShowUserError(err.localizedDescription)
     }
     
-    func webView(sender: WebView!, didStartProvisionalLoadForFrame frame: WebFrame!) {
-        PGSDKLogger.trace("Authentication web view starting load")
-        self.spinner.hidden = false
+    func webView(_ sender: WebView!, didStartProvisionalLoadFor frame: WebFrame!) {
+        Logger.trace("Authentication web view starting load")
+        self.spinner.isHidden = false
         self.spinner.startAnimation(nil)
     }
 

@@ -16,7 +16,6 @@
 		4F6384151D074A530035DF52 /* PredixMobileMacOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6384141D074A530035DF52 /* PredixMobileMacOSUITests.swift */; };
 		4FBEBC871D077D3700AC5274 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBEBC861D077D3700AC5274 /* AuthViewController.swift */; };
 		4FBEBC8A1D077D8E00AC5274 /* PredixMobileSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FBEBC891D077D8E00AC5274 /* PredixMobileSDK.framework */; };
-		4FBEBC8D1D07859800AC5274 /* PredixMobileSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FBEBC891D077D8E00AC5274 /* PredixMobileSDK.framework */; };
 		4FBEBC8E1D07859800AC5274 /* PredixMobileSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4FBEBC891D077D8E00AC5274 /* PredixMobileSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4FD843DE1D089F5C008D6CDA /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD843DC1D089F5C008D6CDA /* PreferencesViewController.swift */; };
 /* End PBXBuildFile section */
@@ -78,7 +77,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4FBEBC8A1D077D8E00AC5274 /* PredixMobileSDK.framework in Frameworks */,
-				4FBEBC8D1D07859800AC5274 /* PredixMobileSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,18 +232,23 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = GE;
 				TargetAttributes = {
 					4F6383F31D074A530035DF52 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 46CF5WSV9A;
+						LastSwiftMigration = 0810;
+						ProvisioningStyle = Automatic;
 					};
 					4F6384041D074A530035DF52 = {
 						CreatedOnToolsVersion = 7.3;
+						LastSwiftMigration = 0810;
 						TestTargetID = 4F6383F31D074A530035DF52;
 					};
 					4F63840F1D074A530035DF52 = {
 						CreatedOnToolsVersion = 7.3;
+						LastSwiftMigration = 0810;
 						TestTargetID = 4F6383F31D074A530035DF52;
 					};
 				};
@@ -363,6 +366,7 @@
 		4F6384171D074A530035DF52 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -374,14 +378,15 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -409,6 +414,7 @@
 		4F6384181D074A530035DF52 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -420,14 +426,15 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -441,6 +448,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 			};
 			name = Release;
 		};
@@ -448,17 +456,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 46CF5WSV9A;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks",
 				);
 				INFOPLIST_FILE = PredixMobileMacOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				OTHER_CODE_SIGN_FLAGS = "--deep";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ge.PredixMobileMacOS;
 				PRODUCT_NAME = PredixMobileMacOS;
 				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/$(PRODUCT_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -466,17 +477,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 46CF5WSV9A;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks",
 				);
 				INFOPLIST_FILE = PredixMobileMacOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				OTHER_CODE_SIGN_FLAGS = "--deep";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ge.PredixMobileMacOS;
 				PRODUCT_NAME = PredixMobileMacOS;
 				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/$(PRODUCT_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -489,6 +503,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ge.PredixMobileMacOSTests;
 				PRODUCT_NAME = PredixMobileMacOS;
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PredixMobileMacOS.app/Contents/MacOS/PredixMobileMacOS";
 			};
 			name = Debug;
@@ -502,6 +517,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ge.PredixMobileMacOSTests;
 				PRODUCT_NAME = PredixMobileMacOS;
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PredixMobileMacOS.app/Contents/MacOS/PredixMobileMacOS";
 			};
 			name = Release;
@@ -514,6 +530,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ge.PredixMobileMacOSUITests;
 				PRODUCT_NAME = PredixMobileMacOS;
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = PredixMobileMacOS;
 			};
 			name = Debug;
@@ -526,6 +543,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ge.PredixMobileMacOSUITests;
 				PRODUCT_NAME = PredixMobileMacOS;
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = PredixMobileMacOS;
 			};
 			name = Release;

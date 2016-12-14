@@ -32,12 +32,12 @@ class PreferencesViewController: NSViewController, NSTextFieldDelegate {
 
         self.loadSettings()
         
-        self.loggingLevelSlider.sendActionOn(Int(NSEventMask([NSEventMask.LeftMouseDraggedMask, NSEventMask.LeftMouseUpMask]).rawValue))
+        self.loggingLevelSlider.sendAction(on: NSEventMask(rawValue: UInt64(Int(NSEventMask([NSEventMask.leftMouseDragged, NSEventMask.leftMouseUp]).rawValue))))
         
-        self.saveButton.hidden = !self.initalStartup
-        self.saveButton.enabled = self.serverInput.cell!.title.characters.count > 0
+        self.saveButton.isHidden = !self.initalStartup
+        self.saveButton.isEnabled = self.serverInput.cell!.title.characters.count > 0
         
-        if let window = self.view.window where self.initalStartup
+        if let window = self.view.window, self.initalStartup
         {
             // allow app to close even if this sheet is showing.
             window.preventsApplicationTerminationWhenModal = false
@@ -54,28 +54,28 @@ class PreferencesViewController: NSViewController, NSTextFieldDelegate {
         self.saveSettings()
     }
     
-    override func mouseDown(theEvent: NSEvent) {
+    override func mouseDown(with theEvent: NSEvent) {
         self.releaseServerField()
     }
     
-    override func controlTextDidChange(obj: NSNotification) {
-        self.saveButton.enabled = self.serverInput.cell!.title.characters.count > 0
+    override func controlTextDidChange(_ obj: Notification) {
+        self.saveButton.isEnabled = self.serverInput.cell!.title.characters.count > 0
     }
     
     
     //MARK: IBActions
-    @IBAction func saveClicked(sender: AnyObject)
+    @IBAction func saveClicked(_ sender: AnyObject)
     {
         self.saveSettings()
         self.view.window?.sheetParent?.endSheet(self.view.window!, returnCode: NSModalResponseOK)
     }
 
-    @IBAction func traceRequestsChanged(sender: NSButton)
+    @IBAction func traceRequestsChanged(_ sender: NSButton)
     {
         self.releaseServerField()
         
     }
-    @IBAction func loggingLevelSliderChanged(sender: NSSlider)
+    @IBAction func loggingLevelSliderChanged(_ sender: NSSlider)
     {
         self.setLoggingLevelDescription(self.loggingLevelSlider.integerValue)
         self.releaseServerField()
@@ -90,7 +90,7 @@ class PreferencesViewController: NSViewController, NSTextFieldDelegate {
         // don't save if there is no server endpoint configured.
         if self.serverInput.cell?.title != ""
         {
-            let defaults = NSUserDefaults.standardUserDefaults()
+            let defaults = UserDefaults.standard
             
             defaults.setValue(self.traceRequestsButton.state == 1, forKey: PredixMobilityConfiguration.traceLogsRequestsConfigKey)
             defaults.setValue(self.loggingLevelSlider.integerValue, forKey: PredixMobilityConfiguration.loggingLevelConfigKey)
@@ -103,9 +103,9 @@ class PreferencesViewController: NSViewController, NSTextFieldDelegate {
     // Initializes the UI with settings stored in NSDefaults.
     func loadSettings()
     {
-        let defaults = NSUserDefaults.standardUserDefaults()
+        let defaults = UserDefaults.standard
         
-        if let value = defaults.valueForKey(PredixMobilityConfiguration.traceLogsRequestsConfigKey), boolValue = value as? Bool
+        if let value = defaults.value(forKey: PredixMobilityConfiguration.traceLogsRequestsConfigKey), let boolValue = value as? Bool
         {
             self.traceRequestsButton.state = boolValue ? 1 : 0
         }
@@ -114,7 +114,7 @@ class PreferencesViewController: NSViewController, NSTextFieldDelegate {
             self.traceRequestsButton.state = PredixMobilityConfiguration.traceLogsAllRequestsDefault ? 1 : 0
         }
         
-        if let value = defaults.valueForKey(PredixMobilityConfiguration.loggingLevelConfigKey), intValue = value as? Int
+        if let value = defaults.value(forKey: PredixMobilityConfiguration.loggingLevelConfigKey), let intValue = value as? Int
         {
             self.loggingLevelSlider.integerValue = intValue
         }
@@ -125,27 +125,23 @@ class PreferencesViewController: NSViewController, NSTextFieldDelegate {
         
         self.setLoggingLevelDescription(self.loggingLevelSlider.integerValue)
         
-        if let value = defaults.valueForKey(PredixMobilityConfiguration.serverEndpointConfigKey), serverEndpoint = value as? String
+        if let value = defaults.value(forKey: PredixMobilityConfiguration.serverEndpointConfigKey), let serverEndpoint = value as? String
         {
             self.serverInput.cell!.title = serverEndpoint
         }
     }
     
     //Translates logging levels to string descriptions.
-    func setLoggingLevelDescription(level: Int)
+    func setLoggingLevelDescription(_ levelInt: Int)
     {
-        switch PGSDKLoggerLevelEnum(UInt32(level))
+        if let level = LoggerLevel(rawValue: levelInt)
         {
-            case PGSDKLoggerLevelOff : self.loggingLevelLabel.cell!.title = "None"
-            case PGSDKLoggerLevelFatal : self.loggingLevelLabel.cell!.title = "Fatal"
-            case PGSDKLoggerLevelError : self.loggingLevelLabel.cell!.title = "Error"
-            case PGSDKLoggerLevelWarn : self.loggingLevelLabel.cell!.title = "Warn"
-            case PGSDKLoggerLevelInfo : self.loggingLevelLabel.cell!.title = "Info"
-            case PGSDKLoggerLevelDebug : self.loggingLevelLabel.cell!.title = "Debug"
-            case PGSDKLoggerLevelTrace : self.loggingLevelLabel.cell!.title = "Trace"
-            default: self.loggingLevelLabel.cell!.title = ""
+            self.loggingLevelLabel.cell!.title = level.description
         }
-        
+        else
+        {
+            self.loggingLevelLabel.cell!.title = ""
+        }
     }
 
     //prompts the completion of text editing in the server hostname field when user interacts with a different part of the UI,
@@ -153,7 +149,7 @@ class PreferencesViewController: NSViewController, NSTextFieldDelegate {
     func releaseServerField()
     {
         self.serverInput.window?.makeFirstResponder(nil)
-        self.saveButton.enabled = self.serverInput.cell!.title.characters.count > 0
+        self.saveButton.isEnabled = self.serverInput.cell!.title.characters.count > 0
     }
 
 }
