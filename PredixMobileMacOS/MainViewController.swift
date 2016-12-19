@@ -103,9 +103,13 @@ class MainViewController: NSViewController, WebFrameLoadDelegate, PredixAppWindo
         // we're using a native page. See the PredixMobileiOS project for an example of an embedded web-based error page.
         PredixMobilityConfiguration.displaySeriousErrorPopup = self.displaySeriousErrorPopup
         
-        PredixMobilityConfiguration.additionalBootServicesToRegister = [OpenURLService.self]
+        // Add optional and custom services to the system if required by adding these services to an array, and assigning that array to PredixMobilityConfiguration.additionalBootServicesToRegister.
+        //PredixMobilityConfiguration.additionalBootServicesToRegister = [OpenURLService.self]
+        
         PredixMobilityConfiguration.loadConfiguration()
         
+        PredixMobilityConfiguration.requireDevicePasscodeSet = false
+
         let pmm = PredixMobilityManager(packageWindow: self, presentAuthentication: {[unowned self] (packageWindow) -> (PredixAppWindowProtocol) in
             
             let authVC = self.storyboard?.instantiateController(withIdentifier: "AuthViewController") as! NSViewController
