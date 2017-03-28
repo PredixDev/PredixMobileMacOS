@@ -16,7 +16,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Insert code here to initialize your application
         
         // logging our current running environment
-        Logger.debug("Started app: \(aNotification.userInfo)")
+        Logger.debug("Started app: \(String(describing: aNotification.userInfo))")
         
         if Logger.isInfoEnabled() {
             let versionInfo = PredixMobilityConfiguration.getVersionInfo()
@@ -38,7 +38,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         if let userNotification = aNotification.userInfo?[NSApplicationLaunchUserNotificationKey] as? NSUserNotification, let userInfo = userNotification.userInfo
         {
             Logger.debug("Startup with notification")
-            Logger.trace("Startup notification info: \(userNotification.userInfo)")
+            Logger.trace("Startup notification info: \(String(describing: userNotification.userInfo))")
             PredixMobilityManager.sharedInstance.applicationDelegates.application(application: NSApplication.shared(), didReceiveRemoteNotification: userInfo)
         }
         
