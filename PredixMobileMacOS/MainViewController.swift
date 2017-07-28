@@ -134,7 +134,7 @@ class MainViewController: NSViewController, WebFrameLoadDelegate, PredixAppWindo
         // This notification tells the SDK the UI is ready for processing.
         // Since we're starting the SDK in a viewcontroller rather than the AppDelegate the system-level 
         // ApplicationDidBecomeActive notification that the SDK usually uses has already occured.
-        NotificationCenter.default.post(name: UIReadyNotification, object: nil)
+        NotificationCenter.default.post(name: Notification.Name.pmUIReady, object: nil)
     }
     
     //MARK: PredixAppWindowProtocol methods
