@@ -9,7 +9,7 @@ It is assumed you already have a Predix Mobile cloud services installation, have
 * [Running the Predix Mobile Sample App](https://www.predix.io/docs#EGUzWwcC)
 * [Creating a Mobile Hello World Web App](https://www.predix.io/docs#DrBWuHkl) 
 
-It is also assumed you're running on a Mac, with XCode version 8.2 installed.
+It is also assumed you're running on a Mac, with XCode version 8.3.3 installed.
 
 ## Download the Container and Start the App
 
