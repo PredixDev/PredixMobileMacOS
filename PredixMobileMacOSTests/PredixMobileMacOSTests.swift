@@ -7,7 +7,6 @@
 //
 
 import XCTest
-@testable import PredixMobileMacOS
 
 class PredixMobileMacOSTests: XCTestCase {
     

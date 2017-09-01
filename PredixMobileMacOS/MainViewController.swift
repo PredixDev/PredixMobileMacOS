@@ -55,13 +55,13 @@ class MainViewController: NSViewController, WebFrameLoadDelegate, PredixAppWindo
         if UserDefaults.standard.value(forKey: PredixMobilityConfiguration.serverEndpointConfigKey) == nil
         {
             let storyboard = self.storyboard!
-            let prefVC = storyboard.instantiateController(withIdentifier: "PreferencesViewController") as! PreferencesViewController
+            let prefVC = storyboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "PreferencesViewController")) as! PreferencesViewController
             prefVC.initalStartup = true
             
             
             let prefWindow = NSWindow(contentViewController: prefVC)
             
-            self.view.window?.beginSheet(prefWindow, completionHandler: {[unowned self] (_:NSModalResponse) in
+            self.view.window?.beginSheet(prefWindow, completionHandler: {[unowned self] (_:NSApplication.ModalResponse) in
                 self.validateKeyPreferences()
                 })
         }
@@ -83,8 +83,8 @@ class MainViewController: NSViewController, WebFrameLoadDelegate, PredixAppWindo
         alert.addButton(withTitle: "Quit").tag = responseQuit
         alert.alertStyle = .critical
         
-        alert.beginSheetModal(for: self.view.window!, completionHandler: { (response: NSModalResponse) in
-            if response == responseQuit
+        alert.beginSheetModal(for: self.view.window!, completionHandler: { (response: NSApplication.ModalResponse) in
+            if response.rawValue == responseQuit
             {
                 exit(EXIT_FAILURE)
             }
@@ -112,7 +112,7 @@ class MainViewController: NSViewController, WebFrameLoadDelegate, PredixAppWindo
 
         let pmm = PredixMobilityManager(packageWindow: self, presentAuthentication: {[unowned self] (packageWindow) -> (PredixAppWindowProtocol) in
             
-            let authVC = self.storyboard?.instantiateController(withIdentifier: "AuthViewController") as! NSViewController
+            let authVC = self.storyboard?.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "AuthViewController")) as! NSViewController
             let authWindow = NSWindow(contentViewController: authVC)
             
             self.view.window?.beginSheet(authWindow, completionHandler: nil)

@@ -32,7 +32,7 @@ class PreferencesViewController: NSViewController, NSTextFieldDelegate {
 
         self.loadSettings()
         
-        self.loggingLevelSlider.sendAction(on: NSEventMask(rawValue: UInt64(Int(NSEventMask([NSEventMask.leftMouseDragged, NSEventMask.leftMouseUp]).rawValue))))
+        self.loggingLevelSlider.sendAction(on: NSEvent.EventTypeMask(rawValue: UInt64(Int(NSEvent.EventTypeMask([NSEvent.EventTypeMask.leftMouseDragged, NSEvent.EventTypeMask.leftMouseUp]).rawValue))))
         
         self.saveButton.isHidden = !self.initalStartup
         self.saveButton.isEnabled = self.serverInput.cell!.title.characters.count > 0
@@ -67,7 +67,7 @@ class PreferencesViewController: NSViewController, NSTextFieldDelegate {
     @IBAction func saveClicked(_ sender: AnyObject)
     {
         self.saveSettings()
-        self.view.window?.sheetParent?.endSheet(self.view.window!, returnCode: NSModalResponseOK)
+        self.view.window?.sheetParent?.endSheet(self.view.window!, returnCode: NSApplication.ModalResponse.OK)
     }
 
     @IBAction func traceRequestsChanged(_ sender: NSButton)
@@ -92,7 +92,7 @@ class PreferencesViewController: NSViewController, NSTextFieldDelegate {
         {
             let defaults = UserDefaults.standard
             
-            defaults.setValue(self.traceRequestsButton.state == 1, forKey: PredixMobilityConfiguration.traceLogsRequestsConfigKey)
+            defaults.setValue(self.traceRequestsButton.state.rawValue == 1, forKey: PredixMobilityConfiguration.traceLogsRequestsConfigKey)
             defaults.setValue(self.loggingLevelSlider.integerValue, forKey: PredixMobilityConfiguration.loggingLevelConfigKey)
             defaults.setValue(self.serverInput.cell!.title, forKey: PredixMobilityConfiguration.serverEndpointConfigKey)
             
@@ -107,11 +107,11 @@ class PreferencesViewController: NSViewController, NSTextFieldDelegate {
         
         if let value = defaults.value(forKey: PredixMobilityConfiguration.traceLogsRequestsConfigKey), let boolValue = value as? Bool
         {
-            self.traceRequestsButton.state = boolValue ? 1 : 0
+            self.traceRequestsButton.state = NSControl.StateValue(rawValue: boolValue ? 1 : 0)
         }
         else
         {
-            self.traceRequestsButton.state = PredixMobilityConfiguration.traceLogsAllRequestsDefault ? 1 : 0
+            self.traceRequestsButton.state = NSControl.StateValue(rawValue: PredixMobilityConfiguration.traceLogsAllRequestsDefault ? 1 : 0)
         }
         
         if let value = defaults.value(forKey: PredixMobilityConfiguration.loggingLevelConfigKey), let intValue = value as? Int
