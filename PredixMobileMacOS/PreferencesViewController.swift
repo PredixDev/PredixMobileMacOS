@@ -35,7 +35,7 @@ class PreferencesViewController: NSViewController, NSTextFieldDelegate {
         self.loggingLevelSlider.sendAction(on: NSEvent.EventTypeMask(rawValue: UInt64(Int(NSEvent.EventTypeMask([NSEvent.EventTypeMask.leftMouseDragged, NSEvent.EventTypeMask.leftMouseUp]).rawValue))))
         
         self.saveButton.isHidden = !self.initalStartup
-        self.saveButton.isEnabled = self.serverInput.cell!.title.characters.count > 0
+        self.saveButton.isEnabled = !self.serverInput.cell!.title.isEmpty
         
         if let window = self.view.window, self.initalStartup
         {
@@ -59,7 +59,7 @@ class PreferencesViewController: NSViewController, NSTextFieldDelegate {
     }
     
     override func controlTextDidChange(_ obj: Notification) {
-        self.saveButton.isEnabled = self.serverInput.cell!.title.characters.count > 0
+        self.saveButton.isEnabled = !self.serverInput.cell!.title.isEmpty
     }
     
     
@@ -149,7 +149,7 @@ class PreferencesViewController: NSViewController, NSTextFieldDelegate {
     func releaseServerField()
     {
         self.serverInput.window?.makeFirstResponder(nil)
-        self.saveButton.isEnabled = self.serverInput.cell!.title.characters.count > 0
+        self.saveButton.isEnabled = !self.serverInput.cell!.title.isEmpty
     }
 
 }
