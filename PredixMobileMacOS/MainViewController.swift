@@ -55,7 +55,7 @@ class MainViewController: NSViewController, WebFrameLoadDelegate, PredixAppWindo
         if UserDefaults.standard.value(forKey: PredixMobilityConfiguration.serverEndpointConfigKey) == nil
         {
             let storyboard = self.storyboard!
-            let prefVC = storyboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "PreferencesViewController")) as! PreferencesViewController
+            let prefVC = storyboard.instantiateController(withIdentifier: "PreferencesViewController") as! PreferencesViewController
             prefVC.initalStartup = true
             
             
@@ -112,7 +112,7 @@ class MainViewController: NSViewController, WebFrameLoadDelegate, PredixAppWindo
 
         let pmm = PredixMobilityManager(packageWindow: self, presentAuthentication: {[unowned self] (packageWindow) -> (PredixAppWindowProtocol) in
             
-            let authVC = self.storyboard?.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "AuthViewController")) as! NSViewController
+            let authVC = self.storyboard?.instantiateController(withIdentifier: "AuthViewController") as! NSViewController
             let authWindow = NSWindow(contentViewController: authVC)
             
             self.view.window?.beginSheet(authWindow, completionHandler: nil)

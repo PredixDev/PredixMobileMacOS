@@ -58,7 +58,7 @@ class PreferencesViewController: NSViewController, NSTextFieldDelegate {
         self.releaseServerField()
     }
     
-    override func controlTextDidChange(_ obj: Notification) {
+    func controlTextDidChange(_ obj: Notification) {
         self.saveButton.isEnabled = !self.serverInput.cell!.title.isEmpty
     }
     

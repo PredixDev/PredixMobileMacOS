@@ -240,7 +240,7 @@
 					4F6383F31D074A530035DF52 = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = H62B4T98ND;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
@@ -251,14 +251,14 @@
 					4F6384041D074A530035DF52 = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = H62B4T98ND;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 4F6383F31D074A530035DF52;
 					};
 					4F63840F1D074A530035DF52 = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = H62B4T98ND;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 4F6383F31D074A530035DF52;
 					};
@@ -427,6 +427,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -476,6 +477,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -500,8 +502,7 @@
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/$(PRODUCT_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -526,8 +527,7 @@
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/$(PRODUCT_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
@@ -544,8 +544,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ge.PredixMobileMacOSTests;
 				PRODUCT_NAME = PredixMobileMacOS;
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PredixMobileMacOS.app/Contents/MacOS/PredixMobileMacOS";
 			};
 			name = Debug;
@@ -563,8 +562,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ge.PredixMobileMacOSTests;
 				PRODUCT_NAME = PredixMobileMacOS;
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PredixMobileMacOS.app/Contents/MacOS/PredixMobileMacOS";
 			};
 			name = Release;
@@ -581,8 +579,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ge.PredixMobileMacOSUITests;
 				PRODUCT_NAME = PredixMobileMacOS;
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TEST_TARGET_NAME = PredixMobileMacOS;
 			};
 			name = Debug;
@@ -599,8 +596,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ge.PredixMobileMacOSUITests;
 				PRODUCT_NAME = PredixMobileMacOS;
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TEST_TARGET_NAME = PredixMobileMacOS;
 			};
 			name = Release;
